@@ -14,4 +14,7 @@ public class Contacto {
     public String getNombreCompleto(){
         return String.format("%s %s",this.primerNombre,this.primerApellido);
     }
+    public String getNumeroTelefono() {
+        return this.numeroTelefono;
+    }
 }
