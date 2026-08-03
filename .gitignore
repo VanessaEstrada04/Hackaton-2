@@ -1,0 +1,56 @@
+# ==========================================
+# Archivos de Compilación de Java (.class)
+# ==========================================
+*.class
+*.log
+*.cjs
+
+# Directorios de salida de compilación
+bin/
+build/
+out/
+target/
+
+# Archivos de empaquetado
+*.jar
+*.war
+*.ear
+*.nar
+*.zip
+*.tar.gz
+*.rar
+
+# ==========================================
+# Configuración y Archivos de IntelliJ IDEA
+# ==========================================
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+gen/
+
+# Si trabajas en equipo, a veces se comparte .idea/codeStyles o .idea/icon.png,
+# pero ignorar toda la carpeta .idea/ es lo ideal para evitar conflictos.
+
+# ==========================================
+# Archivos del Sistema Operativo
+# ==========================================
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs.generated.db
+Desktop.ini
+
+# ==========================================
+# Logs y Temporales
+# ==========================================
+*.tmp
+*.bak
+*.swp
