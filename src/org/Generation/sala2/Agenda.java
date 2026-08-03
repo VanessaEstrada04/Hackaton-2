@@ -17,6 +17,19 @@ public class Agenda {
         this.capacidadMax = 10;
     }
 
+    //  METODO AÑADIR CONTACTO
+    public void añadirContacto(Contacto contacto) {
+
+        if (agendaLlena()) {
+            System.out.println("La agenda está llena");
+        } else if (existeContacto(contacto)) {
+            System.out.println("El contacto ya existe.");
+        } else {
+            contactos.add(contacto);
+            System.out.println("Contacto agregado correctamente.");
+        }
+    }
+
     // Metodo para saber si la agenda está llena
     public boolean agendaLlena() {
         if (contactos.size() >= capacidadMax) {
@@ -63,4 +76,6 @@ public class Agenda {
         }
     }
 
+
+    }
 }
