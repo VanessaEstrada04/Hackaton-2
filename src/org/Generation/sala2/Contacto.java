@@ -11,6 +11,15 @@ public class Contacto {
         this.numeroTelefono = numeroTelefono;
     }
 
+    public String getPrimerNombre() {
+        return primerNombre;
+    }
+
+    public String getPrimerApellido() {
+        return primerApellido;
+    }
+
+
     public String getNombreCompleto(){
         return String.format("%s %s",this.primerNombre,this.primerApellido);
     }
@@ -18,3 +27,5 @@ public class Contacto {
         return this.numeroTelefono;
     }
 }
+
+

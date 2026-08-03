@@ -7,12 +7,14 @@ public class Agenda {
     private List<Contacto> contactos = new ArrayList<>();
 
     //constructores
-//Constructor del contacto que el usuario agrega.
-    public Agenda(int capacidadMax ) {
+
+    //Constructor del contacto que el usuario agrega.
+    public Agenda(int capacidadMax) {
         this.capacidadMax = capacidadMax;
     }
 
-//constructor por default
+
+    //constructor por defoult
     public Agenda() {
         this.capacidadMax = 10;
     }
@@ -77,5 +79,15 @@ public class Agenda {
     }
 
 
+    }
+
+    public Contacto buscarContacto(String nombre, String apellido) {
+        for (Contacto c : contactos){
+            if (c.getPrimerNombre().equalsIgnoreCase(nombre) &&
+                    c.getPrimerApellido().equalsIgnoreCase(apellido)){
+                return c;
+            }
+        }
+        return null;
     }
 }
