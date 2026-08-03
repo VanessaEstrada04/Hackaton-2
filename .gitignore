@@ -28,6 +28,7 @@ target/
 *.iws
 *.ipr
 out/
+gen/
 
 # Si trabajas en equipo, a veces se comparte .idea/codeStyles o .idea/icon.png,
 # pero ignorar toda la carpeta .idea/ es lo ideal para evitar conflictos.
