@@ -14,18 +14,28 @@ public class Contacto {
     public String getPrimerNombre() {
         return primerNombre;
     }
+    public void setPrimerNombre(String primerNombre) {
+        this.primerNombre = primerNombre;
+    }
 
     public String getPrimerApellido() {
         return primerApellido;
     }
+    public void setPrimerApellido(String primerApellido) {
+        this.primerApellido = primerApellido;
+    }
 
+    public String getNumeroTelefono() {
+        return numeroTelefono;
+    }
 
+    public void setNumeroTelefono(String numeroTelefono) {
+        this.numeroTelefono = numeroTelefono;
+    }
     public String getNombreCompleto(){
         return String.format("%s %s",this.primerNombre,this.primerApellido);
     }
-    public String getNumeroTelefono() {
-        return this.numeroTelefono;
-    }
+
 }
 
 
