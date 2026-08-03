@@ -8,14 +8,29 @@ public class Agenda {
 
     //constructores
 
-//Constructor del contacto que el usuario agrega.
+    //Constructor del contacto que el usuario agrega.
     public Agenda(int capacidadMax) {
         this.capacidadMax = capacidadMax;
 
     }
-//constructor por defoult
+
+    //constructor por defoult
     public Agenda() {
         this.capacidadMax = 10;
 
     }
+
+    public boolean existeContacto(Contacto c) {
+        if (c == null || c.getNombreCompleto() == null) {
+            return false;
+        }
+
+        for (Contacto elemento : contactos) {
+            if (c.getNombreCompleto().equalsIgnoreCase(elemento.getNombreCompleto())) {
+                return true;
+            }
+        }
+        return false;
+    }
+
 }
