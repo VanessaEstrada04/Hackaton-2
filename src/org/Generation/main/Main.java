@@ -1,5 +1,7 @@
 package org.Generation.main;//objeto agenda,validar que no este la agenda llena, no pasarnos de la capacidad maxima.
 import org.Generation.sala2.Agenda;
+import org.Generation.sala2.Contacto;
+import org.Generation.sala2.Validaciones;
 
 import java.util.Scanner;
 
@@ -9,6 +11,7 @@ public class Main{
         boolean capacidadIncorrecta = true;
         Scanner scanner = new Scanner(System.in);
         int opcion;
+        Agenda agenda = new Agenda();
 
         System.out.println("Presiona ENTER para iniciar...");
         scanner.nextLine();
@@ -20,13 +23,12 @@ public class Main{
             System.out.println("Ingresa la capacidad máxima: ");
             String respuesta = scanner.nextLine().trim();
             if (respuesta.equals("")) { //Si presiona ENTER sin escribir nada, usas el constructor por defecto (10)
-                Agenda agenda = new Agenda();
                 capacidadIncorrecta = false;
             } else {
                 try {
                     int capacidadMax = Integer.parseInt(respuesta);
                     if (capacidadMax > 0) {
-                        Agenda agenda = new Agenda(capacidadMax);
+                        agenda = new Agenda(capacidadMax);
                         capacidadIncorrecta = false;
                     } else {
                         System.out.println("El valor no puede ser cero, intenta nuevamente.");
@@ -57,20 +59,51 @@ public class Main{
             }
 
             switch (opcion) {
-                case 1:
+                case 1: {
+                    //Añadir contacto
+                    String nombre = Validaciones.leerCampoNoVacio(scanner,"Ingresa primer nombre");
+                    String apellido = Validaciones.leerCampoNoVacio(scanner,"Ingresa primer apellido");
+                    String telefono = Validaciones.leerTelefonoValido(scanner);
+                    Contacto usuario = new Contacto(nombre, apellido, telefono);
+                    agenda.añadirContacto(usuario);
                     break;
-                case 2:
+                }
+                case 2: {
+                    //Verificar si existe contacto
+                    String nombre = Validaciones.leerCampoNoVacio(scanner,"Ingresa primer nombre");
+                    String apellido = Validaciones.leerCampoNoVacio(scanner,"Ingresa primer apellido");
+                    String telefono = Validaciones.leerTelefonoValido(scanner);
+                    Contacto usuario = new Contacto(nombre, apellido, telefono);
+                    agenda.existeContacto(usuario);
                     break;
-                case 3:
+                }
+                case 3: {
+                    agenda.listarContactos();
                     break;
-                case 4:
+                }
+                case 4: {
+                    //Buscar contacto por nombre
+                    String nombre = Validaciones.leerCampoNoVacio(scanner,"Ingresa primer nombre");
+                    String apellido = Validaciones.leerCampoNoVacio(scanner,"Ingresa primer apellido");
+                    agenda.buscarContacto(nombre, apellido);
                     break;
-                case 5:
+                }
+                case 5: {
+                    //Eliminar contacto
+                    String nombre = Validaciones.leerCampoNoVacio(scanner,"Ingresa primer nombre");
+                    String apellido = Validaciones.leerCampoNoVacio(scanner,"Ingresa primer apellido");
+                    String telefono = Validaciones.leerTelefonoValido(scanner);
+                    agenda.eliminarContacto(new Contacto(nombre,apellido,telefono));
                     break;
-                case 6:
+                }
+                case 6: {
+                    agenda.espacioLibres();
+                    agenda.agendaLlena();
+                }
+                case 7: {
+                    //Salir
                     break;
-                case 7:
-                    break;
+                }
                 default:
                     System.out.println("Opción no válida. Intente de nuevo.");
             }

@@ -44,6 +44,7 @@ public class Agenda {
     // Metodo para calcular cuántos espacios libres quedan
     public int espacioLibres() {
         int espacios = capacidadMax - contactos.size();
+        System.out.println("Los espacios libres son " + espacios);
         return espacios;
     }
 
@@ -54,9 +55,11 @@ public class Agenda {
 
         for (Contacto elemento : contactos) {
             if (c.getNombreCompleto().equalsIgnoreCase(elemento.getNombreCompleto())) {
+                System.out.println("El contacto SÍ existe en la agenda.");
                 return true;
             }
         }
+        System.out.println("El contacto NO existe en la agenda.");
         return false;
     }
     /*
@@ -84,9 +87,11 @@ public class Agenda {
         for (Contacto c : contactos){
             if (c.getPrimerNombre().equalsIgnoreCase(nombre) &&
                     c.getPrimerApellido().equalsIgnoreCase(apellido)){
+                System.out.println("Contacto encontrado: " + c.getNombreCompleto() + " - " + c.getNumeroTelefono());
                 return c;
             }
         }
+        System.out.println("No se encontró ningún contacto con ese nombre.");
         return null;
     }
 
